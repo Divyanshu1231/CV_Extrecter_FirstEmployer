@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 
 from . import convert, photo
-from .processor import DetectionError, process_pdf, tesseract_available
+from .processor import WATERMARK, DetectionError, process_pdf, tesseract_available
 
 logger = logging.getLogger("cv-privacy")
 
@@ -40,6 +40,7 @@ def health():
     return {
         "status": "ok",
         "version": app.version,
+        "watermark": WATERMARK,
         "ocr": tesseract_available(),
         "photo_detector": photo.detector_name(),
         "word_upload": convert.office_available(),
