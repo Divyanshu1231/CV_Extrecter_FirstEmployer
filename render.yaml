@@ -33,7 +33,7 @@ services:
       # If Render gives your API a different URL (name already taken), change this value
       # and redeploy the frontend.
       - key: VITE_API_URL
-        value: https://cv-privacy-watermark-api.onrender.com
+        value: https://cv-privacy-watermark-api-yi23.onrender.com
     routes:
       - type: rewrite
         source: /*
